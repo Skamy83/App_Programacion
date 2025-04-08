@@ -1,0 +1,37 @@
+//TABLA LIBRO
+
+CREATE TABLE Book
+(isbn INTEGER PRIMARY KEY ASC,
+ title VARCHAR (50) NOT NULL,
+ format VARCHAR (30) NOT NULL,
+ year INTEGER NOT NULL,
+ votes INTEGER NOT NULL);
+ Editorial INTEGER REFERENCES NOT NULL;
+ 
+insert into book values (100,'La soledad','tapa dura',2021,100,Planeta):
+	
+
+//TABLA AUTOR
+
+CREATE TABLE Author
+(idauthor INTEGER PRIMARY KEY ASC,
+ name VARCHAR (100) NOT NULL,
+ country VARCHAR(40) NOT NULL, 
+ datenac DATE NOT NULL,
+ email VARCHAR (100) ,
+ languaje VARCHAR(100)NOT NULL);
+
+ insert into author values (100,'Helver Limas','Colombia',1975,'elim@gmail.com','Spanish'):
+
+//TABLA AUTOR-LIBRO
+
+CREATE TABLE AUTHOR-BOOK(
+  isbn INTEGER PRIMARY KEY ASC,
+  idauthor INTEGER PRIMARY KEY ASC,
+  categoría VARCHAR(40),
+  sinopsis VARCHAR(40) NOT NULL,
+  FOREIGN KEY(isbn) REFERENCES book(isbn),
+  FOREIGN KEY(idauthor) REFERENCES author(idauthor),
+);
+
+insert into author-book values ();
